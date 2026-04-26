@@ -1,4 +1,4 @@
-# 🌍 Global View
+# 🌍 World Explorer
 
 A responsive country explorer web application built using **HTML, CSS, Bootstrap, JavaScript**, and the **REST Countries API**. Users can browse all countries and search/filter them by **Country Name, Country Code, Continent, and Capital City** with a modern premium UI.
 
