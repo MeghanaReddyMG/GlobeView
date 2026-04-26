@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Explorer | Premium</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <!-- Custom Premium Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-glass sticky-top mb-4 py-3">
+    <div class="container">
+      <a class="navbar-brand text-decoration-none" href="#">
+        <i class="bi bi-globe-americas brand-icon"></i>
+        World Explorer
+      </a>
+    </div>
+  </nav>
+
+  <div class="container pb-5">
+    <!-- Filter Row -->
+    <div class="glass-panel">
+        <div class="row g-3 align-items-center">
+            <div class="col-12 col-md-2">
+                <input type="text" class="form-control filter-input" id="searchName" placeholder="Search Name">
+            </div>
+            <div class="col-12 col-md-2">
+                <input type="text" class="form-control filter-input" id="searchCode" placeholder="Search Code">
+            </div>
+            <div class="col-12 col-md-3">
+                <select class="form-select filter-input" id="filterRegion">
+                    <option value="">All Continents</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Antarctic">Antarctic</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-3">
+                <input type="text" class="form-control filter-input" id="searchCapital" placeholder="Search Capital">
+            </div>
+            <div class="col-12 col-md-2 d-grid">
+                <button class="btn btn-glass" id="clearBtn">
+                    <i class="bi bi-x-circle me-1"></i> Clear
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results count & Loader -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h6 id="resultsCount" class="text-muted m-0" style="font-weight: 500;">Initializing...</h6>
+    </div>
+
+    <!-- Full page loader -->
+    <div class="spinner-glass" id="loadingSpinner" style="display: none;"></div>
+
+    <!-- Countries Grid -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="countriesContainer">
+      <!-- Cards rendered via JS -->
+    </div>
+
+    <!-- No Results Message -->
+    <div class="alert alert-warning text-center d-none mt-4 glass-panel" style="background: rgba(255, 193, 7, 0.2); border-color: rgba(255, 193, 7, 0.3); color: #fff;" id="noResultsMsg">
+      <i class="bi bi-search d-block fs-2 mb-2"></i>
+      No countries found matching your criteria.
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
